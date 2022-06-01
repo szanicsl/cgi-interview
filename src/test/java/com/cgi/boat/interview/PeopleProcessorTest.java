@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class PeopleProcessorTest {
+class PeopleProcessorTest {
 
     static List<Person> people;
 
@@ -44,4 +44,5 @@ public class PeopleProcessorTest {
 
         Assertions.assertEquals(expected, PeopleProcessor.firstnamesByLastname(people));
     }
+
 }
