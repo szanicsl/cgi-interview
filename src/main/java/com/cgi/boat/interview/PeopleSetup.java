@@ -5,6 +5,11 @@ import java.util.Collections;
 import java.util.List;
 
 class PeopleSetup {
+
+    private PeopleSetup(){
+        throw new java.lang.UnsupportedOperationException("This is a utility class and cannot be instantiated");
+    }
+
     final static List<Person> people = Collections.unmodifiableList(Arrays.asList(
             new Person("Antonio","Aakeel"),
             new Person("Khalid","Abdalla"),
