@@ -2,6 +2,7 @@ package com.cgi.boat.interview;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -22,6 +23,7 @@ public class PeopleProcessorTest {
         ));
     }
 
+    @DisplayName("Test lastnamesByFirstname() method.")
     @Test
     void testLastnamesByFirstname(){
         Map<String, List<String>> expected = Collections.unmodifiableMap(Map.of(
@@ -32,6 +34,7 @@ public class PeopleProcessorTest {
         Assertions.assertEquals(expected, PeopleProcessor.lastnamesByFirstname(people));
     }
 
+    @DisplayName("Test firstnamesByLastname() method.")
     @Test
     void testFirstnamesByLastname(){
         Map<String, List<String>> expected = Collections.unmodifiableMap(Map.of(
