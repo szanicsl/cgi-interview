@@ -10,17 +10,24 @@ public class Main {
 
     public static void main(String[] args) {
         Map<String, List<String>> lastByFirst = PeopleProcessor.lastnamesByFirstname(PeopleSetup.people);
+        Map<String, List<String>> firstByLast = PeopleProcessor.firstnamesByLastname(PeopleSetup.people);
 
-        printTopN(lastByFirst, 3);
+        log.info("--- 3 most common first names ---");
+        PrinterUtility.printTopN(lastByFirst, 3);
 
+        log.info("--- 3 most common last names ---");
+        PrinterUtility.printTopN(firstByLast, 3);
+
+        log.info("--- 3 most common last names accounting ties ---");
+        PrinterUtility.printTopNAccountingTies(firstByLast, 3);
+
+        log.info("--- 6 most common first names ---");
+        PrinterUtility.printTopN(lastByFirst, 6);
+
+        log.info("--- 6 most common first names accounting ties ---");
+        PrinterUtility.printTopNAccountingTies(lastByFirst, 6);
     }
 
-    private static void printTopN(Map<String, List<String>> map, int n){
-        map.entrySet().stream()
-                .sorted((entry1, entry2) -> entry2.getValue().size() - entry1.getValue().size())
-                .limit(n)
-                .map(entry -> entry.getKey() + ": " + entry.getValue().size())
-                .forEach(log::info);
-    }
+
 
 }
